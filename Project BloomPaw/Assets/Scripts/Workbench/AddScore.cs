@@ -51,6 +51,7 @@ public class AddScore : MonoBehaviour
             customerFlower[2] = pointB.flower2;   
             int correctNumberOfFlowers =  CountMatchingElements(customerFlower, choosenFlower1, choosenFlower2, choosenFlower3);
             scoreObject.score += correctNumberOfFlowers * 5;
+            scoreObject.lastChange = correctNumberOfFlowers * 5;
             pointB.inProcess = false;
             pointB.isDone = true;
             
@@ -61,6 +62,7 @@ public class AddScore : MonoBehaviour
             customerFlower[2] = pointC.flower2;   
             int correctNumberOfFlowers =  CountMatchingElements(customerFlower, choosenFlower1, choosenFlower2, choosenFlower3);
             scoreObject.score += correctNumberOfFlowers * 5;
+            scoreObject.lastChange = correctNumberOfFlowers * 5;
             pointC.inProcess = false;
             pointC.isDone = true;
             
