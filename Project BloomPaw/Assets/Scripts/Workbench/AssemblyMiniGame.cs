@@ -21,14 +21,15 @@ public class AssemblyMiniGame : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     public Sprite[] sprite2;
     public GameObject[] Checkpoints;
     public DNDOrder order;
+    [SerializeField] AudioSource audioSource;
 
     public void OnPointerDown(PointerEventData eventData)
     {
         int clickID = eventData.pointerId;
-        print("hi");
 
             if (clickID == -1)
             {
+                audioSource.Play();
                 print("Left mouse click registered on: " + name + " " + Input.mousePosition);
                 dragged = true;
             }

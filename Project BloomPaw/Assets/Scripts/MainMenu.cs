@@ -8,9 +8,7 @@ public class MainMenu : MonoBehaviour
    public AudioClip audio;
    public AudioSource audioSource;
 
-   //public void playButtonAudio(){
-   //   audio.Play();
-   //}
+  // Handles the player's action to switch to another scence and playing audio before transitioning to the flower shop scene.
    public void PlayGame(){
        audioSource.Play();
       StartCoroutine(_PlayGame());
@@ -30,6 +28,17 @@ public class MainMenu : MonoBehaviour
    private IEnumerator _GoBack(){
         yield return new WaitForSeconds(audio.length);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
+   }
+
+   public void OpenWorkBench(){
+        audioSource.Play();
+        StartCoroutine(_OpenWorkBench());
+   }
+
+   private IEnumerator _OpenWorkBench()
+   {
+        yield return new WaitForSeconds(audio.length);
+        SceneManager.LoadScene(4);
    }
 
    public void QuitGame(){

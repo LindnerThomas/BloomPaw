@@ -17,6 +17,8 @@ public class FlowerDND : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public DNDOrder order;
     public int flowerID;
     public Sprite[] flowerSprite;
+    public AddScore addscore;
+    [SerializeField] InventoryItem flower;
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -59,30 +61,34 @@ public class FlowerDND : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             if (hit.collider.name == "Circle1")
             {
                 GameObject flower = GameObject.Find("Flower1");
+                addscore.choosenFlower1 = flowerID;
 
                 foreach (Transform child in flower.transform)
                 {
-                    child.GetComponent<SpriteRenderer>().sprite = flowerSprite[flowerID - 1];
+                    child.GetComponent<SpriteRenderer>().sprite = flowerSprite[flowerID];
                 }
             }
             if (hit.collider.name == "Circle2")
             {
                 GameObject flower = GameObject.Find("Flower2");
+                addscore.choosenFlower2 = flowerID;
 
                 foreach (Transform child in flower.transform)
                 {
-                    child.GetComponent<SpriteRenderer>().sprite = flowerSprite[flowerID - 1];
+                    child.GetComponent<SpriteRenderer>().sprite = flowerSprite[flowerID];
                 }
             }
             if (hit.collider.name == "Circle3")
             {
                 GameObject flower = GameObject.Find("Flower3");
+                addscore.choosenFlower3 = flowerID;
 
                 foreach (Transform child in flower.transform)
                 {
-                    child.GetComponent<SpriteRenderer>().sprite = flowerSprite[flowerID - 1];
+                    child.GetComponent<SpriteRenderer>().sprite = flowerSprite[flowerID];
                 }
             }
+            addscore.decreaseInventory(flowerID);
             order.startEvent();
 
         }
@@ -91,7 +97,7 @@ public class FlowerDND : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     // simple Drag and Drop Loop
     void CheckforDragging()
     {
-        if (dragged)    {DraggedMode();}
+        if (dragged && flower.flowerCount > 0 )    {DraggedMode();}
         else            {StillMode();}
     }
     

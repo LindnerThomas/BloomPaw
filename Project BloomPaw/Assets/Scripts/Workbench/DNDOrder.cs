@@ -7,9 +7,6 @@ using UnityEngine;
 public class DNDOrder : MonoBehaviour
 {
     int currentEvent = 1;
-    int flowerID1;
-    int flowerID2;
-    int flowerID3;
 
     public void startEvent()
     {

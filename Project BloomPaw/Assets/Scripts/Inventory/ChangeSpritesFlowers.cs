@@ -10,12 +10,12 @@ public class ChangeSpritesFlowers : MonoBehaviour
     public Sprite sp1, sp2;
 
 
-    // Update is called once per frame
+    // Change the Sprite of the Inventory Item when it is 0 and when it is 1;
     void Update()
     {
-         if(inventoryHandler.activeMethod && inventoryItem.flowerCount == 0){
+         if(inventoryItem.flowerCount == 0){
             GetComponent<SpriteRenderer>().sprite = sp2;
-        }else if(inventoryHandler.activeMethod && inventoryItem.flowerCount == 1) {
+        }else if(inventoryItem.flowerCount >= 1) {
             GetComponent<SpriteRenderer>().sprite = sp1;
         }
     }

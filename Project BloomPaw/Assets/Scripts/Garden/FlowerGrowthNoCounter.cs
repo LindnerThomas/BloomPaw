@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlowerGrowth : MonoBehaviour
+public class FlowerGrowthNoCounter : MonoBehaviour
 {
     Animator anim1;
     private bool entered = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,12 +23,11 @@ public class FlowerGrowth : MonoBehaviour
             anim1.ResetTrigger("Pick");
         }
         //We only want to be able to pick if the flower has already grown(animation is finished)
-        else if(Input.GetMouseButtonDown(0) && entered && anim1.GetBool("Growth")
+        else if (Input.GetMouseButtonDown(0) && entered && anim1.GetBool("Growth")
             && TestIfAnimationFinished())
         {
             anim1.SetTrigger("Pick");
             anim1.ResetTrigger("Growth");
-            //TODO: The flower must be added to the inventory when it is picked
         }
     }
 
@@ -35,9 +35,9 @@ public class FlowerGrowth : MonoBehaviour
     {
         Player player = collision.GetComponent<Player>();
 
-        if(player)
+        if (player)
         {
-           entered = true;
+            entered = true;
         }
     }
 
@@ -58,7 +58,7 @@ public class FlowerGrowth : MonoBehaviour
         AnimatorStateInfo animatorStateInfo = anim1.GetCurrentAnimatorStateInfo(0);
         float Ntime = animatorStateInfo.normalizedTime;
 
-        if(Ntime > 1.0f)
+        if (Ntime > 1.0f)
         {
             return true;
         }
@@ -66,3 +66,4 @@ public class FlowerGrowth : MonoBehaviour
     }
 
 }
+

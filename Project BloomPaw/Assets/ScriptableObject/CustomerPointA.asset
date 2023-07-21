@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9fdbf62e6d6b0048ad1dff4eca3178a, type: 3}
+  m_Name: CustomerPointA
+  m_EditorClassIdentifier: 
+  flower0: 3
+  flower1: 5
+  flower2: 3
+  inProcess: 0
+  timeLeft: 30
+  customerSpriteID: 6
+  isDone: 0
+  isAvailable: 1

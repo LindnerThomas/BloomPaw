@@ -14,10 +14,8 @@ public class PointHUD : MonoBehaviour
         UpdateHUD();
         
     }
-
-
   
-
+    // Update the Score Text Element.
     private void UpdateHUD() {
         pointText.text = scoreObject.score.ToString();
 

@@ -35,8 +35,11 @@ public class InventoryHandler : MonoBehaviour
     }    
 
     public void decreaseCount(){
-        inventoryItem.flowerCount--;
-        activeMethod = true;
+        if (inventoryItem.flowerCount > 0){
+            inventoryItem.flowerCount--;
+            activeMethod = true;
+        }
+      
     }
 
     public void setCountDefault(){

@@ -7,12 +7,18 @@ using TMPro;
 public class CountDownTimer : MonoBehaviour
 {
     [SerializeField] Timer timer;
+    [SerializeField] AudioSource audioSource;
     public Text timeText;
+    private bool countdown = true;
 
 
+    // Updates the timer countdown, reducing the remaining time by Time.deltaTime until it reaches zero.
+    // The method displays the updated time and checks if the time has reached the last minute.
     private void Update()
     {
-        
+
+        CountDownPlay();
+
         if(timer.time > 0)
         {
             timer.time -= Time.deltaTime;
@@ -43,7 +49,15 @@ public class CountDownTimer : MonoBehaviour
     public void lastMinute(){
         if(timer.time < 60){
             GetComponent<Text>().color = new Color(255,0,0);
-;
+        }       
+    }
+
+    public void CountDownPlay(){   
+        
+        if (timer.time < 4 && countdown){
+            audioSource.Play();
+            countdown = false;
         }
+           
     }
 }
