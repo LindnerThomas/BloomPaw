@@ -32,7 +32,7 @@ public class FlowerGrowth : MonoBehaviour
             anim1.ResetTrigger("Growth");
             //TODO: The flower must be added to the inventory when it is picked
             audioSource.Play();
-            flower.flowerCount += 3;
+            flower.flowerCount += 4;
         }
     }
 

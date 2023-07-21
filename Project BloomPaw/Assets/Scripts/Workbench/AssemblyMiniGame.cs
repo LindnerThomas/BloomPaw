@@ -72,6 +72,7 @@ public class AssemblyMiniGame : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         }
     }
 
+    //If the circle is dragged, check if Checkpoint is touchend. If yes change sprite.
     void CheckforCheckpoint()
     {
         RaycastHit2D Hit = Physics2D.Raycast(transform.position, Vector2.zero, Mathf.Infinity, CheckpointLayerMask);

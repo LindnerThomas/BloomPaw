@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31795822481e5b44287db34c05e7b73f, type: 3}
   m_Name: Timer
   m_EditorClassIdentifier: 
-  time: 599.9951
+  time: 30
